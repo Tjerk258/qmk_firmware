@@ -1,6 +1,9 @@
 // Copyright 2023 QMK
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+#include "color.h"
+#define CAPS_LOCK_LED_INDEX 79
+
 /* Copyright 2021 QMK
  *
  * This program is free software: you can redistribute it and/or modify
@@ -62,17 +65,20 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 //capslock and numlock leds
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     if (host_keyboard_led_state().caps_lock) {
-        RGB_MATRIX_INDICATOR_SET_COLOR(79, 255, 255, 255); // assuming caps lock is at led #5
+        RGB rgb = hsv_to_rgb(rgb_matrix_get_hsv());
+        RGB_MATRIX_INDICATOR_SET_COLOR(CAPS_LOCK_LED_INDEX, 255-rgb.r, 255-rgb.g, 255-rgb.b);
     } else {
-        RGB_MATRIX_INDICATOR_SET_COLOR(79, 0, 0, 0);
+        // RGB_MATRIX_INDICATOR_SET_COLOR(79, 0, 0, 0);
     }
     if (host_keyboard_led_state().num_lock) {
         RGB_MATRIX_INDICATOR_SET_COLOR(53, 255, 255, 255); // assuming caps lock is at led #5
     } else {
-        RGB_MATRIX_INDICATOR_SET_COLOR(53, 0, 0, 0);
+        // RGB_MATRIX_INDICATOR_SET_COLOR(53, 0, 0, 0);
     }
     return false;
 }
+
+
 
 
 //numlock always active

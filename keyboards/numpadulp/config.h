@@ -1,4 +1,4 @@
-// Copyright 2023 Tjerk (@Tjerk258)
+// Copyright 2023 Tjerk (@Tjerk)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
@@ -19,8 +19,6 @@
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
 
-#define DEBOUNCE 1
-
 #define I2C_DRIVER I2CD2
 #define I2C1_SCL_PIN B10
 #define I2C1_SDA_PIN B11
@@ -28,22 +26,15 @@
 #define I2C1_DUTY_CYCLE FAST_DUTY_CYCLE_2
 
 /* RGB Settings*/
-#define DRIVER_COUNT 3
+#define DRIVER_COUNT 1
 #define DRIVER_ADDR_1  0b1010000
-#define DRIVER_ADDR_2  0b1010001
-#define DRIVER_ADDR_3  0b1010010
-#define DRIVER_SYNC_1  01
-#define DRIVER_SYNC_2  10
-#define DRIVER_SYNC_3  10
 #define ISSI_GLOBALCURRENT  237
 #define ISSI_SWPULLUP PUR_16KR
 #define ISSI_CSPULLUP PUR_16KR
-#define DRIVER_1_LED_TOTAL 61
-#define DRIVER_2_LED_TOTAL 53
-#define DRIVER_3_LED_TOTAL 34
-#define RGB_MATRIX_LED_COUNT (DRIVER_1_LED_TOTAL + DRIVER_2_LED_TOTAL + DRIVER_3_LED_TOTAL)
+#define DRIVER_1_LED_TOTAL 21
+#define RGB_MATRIX_LED_COUNT DRIVER_1_LED_TOTAL
 
-#define RGB_MATRIX_DEFAULT_VAL 10
+#define RGB_MATRIX_DEFAULT_VAL 100
 #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #define RGB_MATRIX_KEYPRESSES
 #define RGB_DISABLE_WHEN_USB_SUSPENDED  // turn off effects when suspended
