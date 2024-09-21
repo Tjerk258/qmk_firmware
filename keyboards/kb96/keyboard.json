@@ -3,7 +3,13 @@
     "keyboard_name": "kb96",
     "maintainer": "Tjerk258",
     "bootloader": "stm32duino",
+    "processor": "STM32F103",
+    "url": "https://hallo.com",
     "diode_direction": "COL2ROW",
+    "debounce": 1,
+    "build":{
+        "debounce_type": "asym_eager_defer_pk"
+    },
     "features": {
         "bootmagic": true,
         "command": true,
@@ -11,7 +17,19 @@
         "extrakey": true,
         "mousekey": true,
         "nkro": true,
-        "encoder": true
+        "encoder": true,
+        "rgb_matrix": true
+    },
+    "rgb_matrix": {
+        "animations": {
+            "breathing": true
+        },
+        "default": {
+            "animation": "breathing",
+            "on": true
+        },
+        "driver": "is31fl3733",
+        "sleep": true
     },
     "matrix_pins": {
         "cols": ["B5", "B4", "B6", "B3", "B7", "B8", "B9", "C13", "C14", "A5", "A8", "B15", "B14", "B13", "B12", "B1", "B0", "A7", "A6"],
@@ -22,12 +40,11 @@
             {"pin_a": "A9", "pin_b": "A10", "resolution": 2}
         ]
     },
-    "processor": "STM32F103",
-    "url": "",
     "usb": {
         "device_version": "1.0.0",
         "pid": "0x8422",
-        "vid": "0xAEED"
+        "vid": "0xAEED",
+        "max_power": 500
     },
     "layouts": {
         "LAYOUT_96_ansi": {
@@ -50,7 +67,7 @@
                 {"matrix": [0, 15], "x": 15, "y": 0},
                 {"matrix": [0, 16], "x": 16, "y": 0},
                 {"matrix": [0, 17], "x": 17, "y": 0},
-                {"matrix": [0, 18], "x": 18, "y": 0},
+                {"matrix": [0, 18], "x": 18, "y": 0, "encoder": 0},
                 {"matrix": [1, 0], "x": 0, "y": 1},
                 {"matrix": [1, 1], "x": 1, "y": 1},
                 {"matrix": [1, 2], "x": 2, "y": 1},
