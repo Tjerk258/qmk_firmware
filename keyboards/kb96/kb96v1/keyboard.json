@@ -1,6 +1,6 @@
 {
     "manufacturer": "Tjerk",
-    "keyboard_name": "kb96",
+    "keyboard_name": "kb96v1",
     "maintainer": "Tjerk258",
     "bootloader": "stm32duino",
     "processor": "STM32F103",
@@ -92,7 +92,7 @@
     },
     "usb": {
         "device_version": "1.0.0",
-        "pid": "0x8422",
+        "pid": "0x0001",
         "vid": "0xAEED",
         "max_power": 500
     },

@@ -1,6 +1,6 @@
 {
     "manufacturer": "Tjerk",
-    "keyboard_name": "kb96",
+    "keyboard_name": "kb96v2",
     "maintainer": "Tjerk258",
     "bootloader": "stm32-dfu",
     "processor": "STM32F411",
@@ -9,6 +9,9 @@
     "debounce": 1,
     "build":{
         "debounce_type": "asym_eager_defer_pk"
+    },
+    "dynamic_key": {
+        "layer_count": 4
     },
     "features": {
         "bootmagic": true,
@@ -239,9 +242,13 @@
     },
     "usb": {
         "device_version": "1.0.0",
-        "pid": "0x8422",
+        "pid": "0x0002",
         "vid": "0xAEED",
-        "max_power": 500
+        "max_power": 500,
+        "polling_interval": 1
+    },
+    "eeprom": {
+        "driver": "i2c"
     },
     "layouts": {
         "LAYOUT_96_ansi": {
